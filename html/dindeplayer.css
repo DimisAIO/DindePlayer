@@ -1,0 +1,25 @@
+#frame {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,50,1) 50%, rgba(0,0,0,1) 100%) no-repeat no-repeat center;
+    overflow: hidden;
+}
+#pausePlayButton {
+    font-size: 10vh;
+    color: white;
+    background-color: transparent;
+    border: 0;
+}
+#seekbar, #seekbarText {
+    width: 90vw;
+}
+#specificsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+#branding {
+    margin-bottom: 0;
+}
+#speed {
+    margin-bottom: 2vh;
+}
