@@ -74,8 +74,17 @@ Public Class Form1
         cms.Show(WebView21, e.Location)
     End Sub
 
+    Function EscapeForJavaScript(input As String) As String
+        Return input.Replace("\", "\\") _
+                .Replace("""", "\""") _
+                .Replace("'", "\'") _
+                .Replace(vbCr, "\r") _
+                .Replace(vbLf, "\n") _
+                .Replace(vbTab, "\t")
+    End Function
     Async Function idk(idkok) As Task
-        Await WebView21.ExecuteScriptAsync("try { handle('" + idkok.ToString.Replace("\", "\\") + "'); } catch (e) { console.error('Error:', e.message); }")
+        idkok = EscapeForJavaScript(idkok)
+        Await WebView21.ExecuteScriptAsync("try { handle('" + idkok + "'); } catch (e) { console.error('Error:', e.message); }")
     End Function
 
     Private Async Sub WebView21_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) Handles WebView21.NavigationCompleted
