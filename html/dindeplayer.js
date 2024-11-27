@@ -36,9 +36,10 @@ function applyPitch() {
 
 function handle(idk) {
     console.log("Loading da files");
-    searchBox.value = "";
+    db = [];
     var x = idk.split("|");
     resultsPart.innerHTML = "";
+    searchBox.value = "";
     x.forEach(element => {
         var songLink = "file:///" + element.replaceAll("\\", "/");
         var songName = element.slice(0, -4).split("\\");
